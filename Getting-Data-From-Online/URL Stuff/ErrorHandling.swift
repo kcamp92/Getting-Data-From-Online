@@ -7,8 +7,19 @@
 //
 
 import Foundation
-enum ErrorHandling: Error {
+
+enum AppError: Error {
+    case unauthenticated
+    case invalidJSONResponse
+    case couldNotParseJSON(rawError: Error)
+    case noInternetConnection
     case badURL
-    case decodingError
-    case noData
+    case badStatusCode
+    case noDataReceived
+    case notAnImage
+    case other(rawError:String)
+    case networkError
+    case badHTTPResponse
+    case notFound
+    case unauthorized
 }

@@ -16,19 +16,19 @@ static let shared = ImageHelper()
     
     func getImage(urlString: String, completionHandler: @escaping(Result<UIImage, Error>) -> Void){
         guard let url = URL(string: urlString) else {
-            completionHandler(.failure(ErrorHandling.badURL))
+            completionHandler(.failure(AppError.badURL))
             return
         }
         URLSession.shared.dataTask(with: url){(data, _, error) in guard error == nil else {
-            completionHandler(.failure(ErrorHandling.noData))
+            completionHandler(.failure(AppError.noDataReceived))
             return
             }
             guard let data = data else {
-                completionHandler(.failure(ErrorHandling.noData))
+                completionHandler(.failure(AppError.notFound))
                 return
             }
             guard let image = UIImage(data: data) else {
-                completionHandler(.failure(ErrorHandling.noData))
+                completionHandler(.failure(AppError.badStatusCode))
                 return
             }
             completionHandler(.success(image))
