@@ -102,7 +102,7 @@ override func viewDidLoad() {
 extension ShowViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
+        return 200
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

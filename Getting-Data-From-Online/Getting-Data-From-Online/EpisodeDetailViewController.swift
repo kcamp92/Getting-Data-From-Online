@@ -20,8 +20,17 @@ class EpisodeDetailViewController: UIViewController {
     
     @IBOutlet weak var episodeDescription: UITextView!
     
+    func setUpLabels() {
+        episodeName.text = episodeHolder.name
+        episodeInformation.text = "Season:\(episodeHolder.season)\(episodeHolder.number)"
+        episodeDescription.text = episodeHolder.summary
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpLabels()
+        
 
         // Do any additional setup after loading the view.
     }

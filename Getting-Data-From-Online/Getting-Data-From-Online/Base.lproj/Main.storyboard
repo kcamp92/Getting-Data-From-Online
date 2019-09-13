@@ -85,8 +85,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="08c-H7-sOC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="08c-H7-sOC">
                                 <rect key="frame" x="0.0" y="60" width="414" height="788"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpisodeCell" rowHeight="290" id="AH9-pY-Xnh" customClass="EpisodeTableViewCell" customModule="Getting_Data_From_Online" customModuleProvider="target">
@@ -126,12 +127,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="08c-H7-sOC" firstAttribute="centerX" secondItem="moy-0J-oex" secondAttribute="centerX" id="RAY-BW-f3U"/>
-                            <constraint firstItem="08c-H7-sOC" firstAttribute="width" secondItem="9w1-UN-Qae" secondAttribute="width" id="buf-8e-3tx"/>
-                            <constraint firstItem="08c-H7-sOC" firstAttribute="height" secondItem="9w1-UN-Qae" secondAttribute="height" id="c87-pF-yg7"/>
-                            <constraint firstItem="08c-H7-sOC" firstAttribute="centerY" secondItem="moy-0J-oex" secondAttribute="centerY" id="h8E-AW-LLg"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="moy-0J-oex"/>
                     </view>
                     <connections>
@@ -168,7 +163,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Episode Detailed Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uZb-xl-MoZ">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Episode Detailed Description" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uZb-xl-MoZ">
                                 <rect key="frame" x="87" y="554" width="243" height="255"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -76,7 +76,7 @@ class EpisodeViewController: UIViewController, UITableViewDataSource {
 extension EpisodeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        return 260
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = storyboard?.instantiateViewController(withIdentifier:"EpisodeDetailViewController") as! EpisodeDetailViewController
