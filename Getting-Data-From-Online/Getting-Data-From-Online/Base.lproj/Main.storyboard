@@ -80,7 +80,7 @@
         <!--Episodes-->
         <scene sceneID="wex-VB-mFf">
             <objects>
-                <viewController title="Episodes" id="ubb-6a-08B" customClass="EpisodeViewController" customModule="Getting_Data_From_Online" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EpisodeViewController" title="Episodes" id="ubb-6a-08B" customClass="EpisodeViewController" customModule="Getting_Data_From_Online" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9w1-UN-Qae">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -179,6 +179,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Oyg-em-36f"/>
                     </view>
+                    <connections>
+                        <outlet property="Image" destination="9WX-fM-cBO" id="q78-gw-kXW"/>
+                        <outlet property="episodeDescription" destination="uZb-xl-MoZ" id="rfO-0T-0P9"/>
+                        <outlet property="episodeInformation" destination="W9S-ip-yUQ" id="Up1-ws-4qB"/>
+                        <outlet property="episodeName" destination="qX5-8I-VIO" id="a16-cX-eAY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jLw-cL-iRk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

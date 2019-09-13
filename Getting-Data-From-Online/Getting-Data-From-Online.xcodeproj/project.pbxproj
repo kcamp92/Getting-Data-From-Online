@@ -53,7 +53,7 @@
 		0BEF6A1B232AE5A200E86319 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		0BEF6A1D232B037400E86319 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 		0BEF6A1F232B046A00E86319 /* EpisodeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeTableViewCell.swift; sourceTree = "<group>"; };
-		0BEF6A21232B054E00E86319 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailViewController.swift; sourceTree = "<group>"; };
+		0BEF6A21232B054E00E86319 /* EpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EpisodeDetailViewController.swift; path = "../Getting-Data-From-Online/EpisodeDetailViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,6 @@
 			children = (
 				0BEF69EA232995C300E86319 /* AppDelegate.swift */,
 				0BEF69EE232995C300E86319 /* Main.storyboard */,
-				0BEF6A21232B054E00E86319 /* EpisodeDetailViewController.swift */,
 				0BEF69F1232995C600E86319 /* Assets.xcassets */,
 				0BEF69F3232995C600E86319 /* LaunchScreen.storyboard */,
 				0BEF69F6232995C600E86319 /* Info.plist */,
@@ -143,6 +142,7 @@
 				0BEF6A122329A8FB00E86319 /* EpisodeModel.swift */,
 				0BEF6A1D232B037400E86319 /* EpisodeViewController.swift */,
 				0BEF6A1F232B046A00E86319 /* EpisodeTableViewCell.swift */,
+				0BEF6A21232B054E00E86319 /* EpisodeDetailViewController.swift */,
 			);
 			path = EpisodeFiles;
 			sourceTree = "<group>";

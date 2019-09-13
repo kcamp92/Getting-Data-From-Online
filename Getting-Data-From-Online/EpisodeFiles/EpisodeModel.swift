@@ -12,8 +12,12 @@ struct EpisodeWrapper: Codable {
     let name: String
     let season: Int
     let number: Int
-    let summary: String
-    let image: Picture
+    let summary: String?
+    let image: Picture?
+    
+    func lazyWayOut()-> String {
+        return "Season:\(season) Episode:\(number)"
+    }
 }
 
 struct Picture: Codable {
@@ -22,7 +26,7 @@ struct Picture: Codable {
 }
 
 class EpisodesAPIManager {
-    private init () {}
+    private init() {}
     static let shared = EpisodesAPIManager()
     
     func getEpisodes(episodeTitle: Int?, completionHandler: @escaping(Result<[EpisodeWrapper],AppError>)-> Void){

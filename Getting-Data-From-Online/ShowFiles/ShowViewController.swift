@@ -65,7 +65,7 @@ class ShowViewController: UIViewController, UITableViewDataSource, UISearchBarDe
         if let cell = ShowTableView.dequeueReusableCell(withIdentifier: "ShowCell", for: indexPath) as? ShowsTableViewCell {
             let show = filteredShows[indexPath.row]
             cell.NameLabel.text = show.show.name
-          //  if let rating = show.show.rating {
+          
             cell.RatingsLabel.text = show.show.rating.average?.description
             if let image = show.show.image {
                 ImageHelper.shared.getImage(urlString: image.original)
@@ -103,6 +103,13 @@ extension ShowViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 190
+        
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyBoard = storyboard?.instantiateViewController(withIdentifier:"EpisodeViewController") as! EpisodeViewController
+       storyBoard.infoHolder = filteredShows[indexPath.row].show
+        
+        navigationController?.pushViewController(storyBoard, animated: true)
         
     }
 }
