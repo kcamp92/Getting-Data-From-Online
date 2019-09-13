@@ -14,7 +14,6 @@ class ShowViewController: UIViewController, UITableViewDataSource, UISearchBarDe
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
     var showList = [ShowWrapper]() {
         didSet{
             ShowTableView.reloadData()
@@ -35,14 +34,12 @@ class ShowViewController: UIViewController, UITableViewDataSource, UISearchBarDe
             return showList
         }
         return showList
-        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         userSearchedText = searchBar.text
         loadData(showInfo: searchBar.text)
     }
-    
     
     private func loadData(showInfo: String?) {
         ShowsAPIManager.shared.getShows(showTitle:showInfo){(result)in
@@ -65,7 +62,7 @@ class ShowViewController: UIViewController, UITableViewDataSource, UISearchBarDe
         if let cell = ShowTableView.dequeueReusableCell(withIdentifier: "ShowCell", for: indexPath) as? ShowsTableViewCell {
             let show = filteredShows[indexPath.row]
             cell.NameLabel.text = show.show.name
-          
+            
             cell.RatingsLabel.text = show.show.rating.average?.description
             if let image = show.show.image {
                 ImageHelper.shared.getImage(urlString: image.original)
@@ -89,27 +86,25 @@ class ShowViewController: UIViewController, UITableViewDataSource, UISearchBarDe
             return UITableViewCell()
         }
     }
-
-override func viewDidLoad() {
-    super.viewDidLoad()
-    ShowTableView.dataSource = self
-    ShowTableView.delegate = self
-    searchBar.delegate = self
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ShowTableView.dataSource = self
+        ShowTableView.delegate = self
+        searchBar.delegate = self
     }
 }
-
 
 extension ShowViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
-        
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = storyboard?.instantiateViewController(withIdentifier:"EpisodeViewController") as! EpisodeViewController
-       storyBoard.infoHolder = filteredShows[indexPath.row].show
+        storyBoard.infoHolder = filteredShows[indexPath.row].show
         
         navigationController?.pushViewController(storyBoard, animated: true)
-        
     }
 }

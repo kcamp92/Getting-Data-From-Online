@@ -21,12 +21,12 @@ class EpisodeViewController: UIViewController, UITableViewDataSource {
     }
     
     private func loadData(episodeInfo: Int) {
-        EpisodesAPIManager.shared.getEpisodes(episodeTitle:episodeInfo){(result)in DispatchQueue.main.async {
+    EpisodesAPIManager.shared.getEpisodes(episodeTitle:episodeInfo){(result)in DispatchQueue.main.async {
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let episodesFromOnline): self.episodeList = episodesFromOnline
-            }
+                }
             }
         }
     }
@@ -64,7 +64,6 @@ class EpisodeViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         EpisodesTableView.dataSource = self
@@ -78,6 +77,7 @@ extension EpisodeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 260
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyBoard = storyboard?.instantiateViewController(withIdentifier:"EpisodeDetailViewController") as! EpisodeDetailViewController
         storyBoard.episodeHolder = episodeList[indexPath.row]
