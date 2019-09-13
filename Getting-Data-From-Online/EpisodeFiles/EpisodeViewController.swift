@@ -8,14 +8,39 @@
 
 import UIKit
 
-class EpisodeViewController: UIViewController {
+class EpisodeViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var EpisodesTableView: UITableView!
+    
+    var episodeList = [EpisodeWrapper]() {
+        didSet{
+            EpisodesTableView.reloadData()
+        }
+    }
+    private func loadData(episodeInfo: Int?) {
+        EpisodesAPIManager.shared.getEpisodes(episodeTitle:episodeInfo){(result)in DispatchQueue.main.async {
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let episodesFromOnline): self.episodeList = episodesFromOnline
+                }
+            }
+        }
+    }
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return episodeList.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    // Do any additional setup after loading the view.
+}
+
 
 
 }

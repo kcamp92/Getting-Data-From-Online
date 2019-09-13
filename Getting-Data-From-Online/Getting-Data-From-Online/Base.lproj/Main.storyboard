@@ -116,6 +116,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="EpisodeImage" destination="6rO-h2-bIX" id="Xj5-zW-9VF"/>
+                                            <outlet property="EpisodeInfoLabel" destination="S1Z-XX-2b0" id="eIo-ed-jWb"/>
+                                            <outlet property="NameLabel" destination="TT0-Bc-dst" id="T7d-ka-Z2Q"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -129,6 +134,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="moy-0J-oex"/>
                     </view>
+                    <connections>
+                        <outlet property="EpisodesTableView" destination="08c-H7-sOC" id="5HM-3c-Llv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ldp-FK-22w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

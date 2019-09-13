@@ -10,6 +10,13 @@ import UIKit
 
 class EpisodeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var EpisodeImage: UIImageView!
+    
+    @IBOutlet weak var NameLabel: UILabel!
+    
+    @IBOutlet weak var EpisodeInfoLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,7 +25,6 @@ class EpisodeTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }
