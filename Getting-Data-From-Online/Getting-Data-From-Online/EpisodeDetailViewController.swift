@@ -26,11 +26,24 @@ class EpisodeDetailViewController: UIViewController {
         episodeDescription.text = episodeHolder.summary
     }
     
+    func loadImage() {
+        ImageHelper.shared.getImage(urlString: episodeHolder.image!.original) {(result) in
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    print(error)
+                case .success(let imageFromOnline):
+                    self.Image.image = imageFromOnline
+                }
+            }
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLabels()
-        
+        loadImage()
 
         // Do any additional setup after loading the view.
     }
